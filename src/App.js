@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { rsi, bollingerBands, bollingerBandsWidth } from 'indicatorts';
+import { bollingerBands, bollingerBandsWidth } from 'indicatorts';
 import usdt from "./symbolUsdt.json"
 
 const App = () => {
@@ -13,7 +13,6 @@ const App = () => {
           // handle success
           const closings = response.data.map((i) => Number(i[4]));
           const resultBol = bollingerBands(closings);
-          const resultRsi = rsi(closings);
           const resultBolWei = bollingerBandsWidth(resultBol);
           const resultBolWeiLastElement = resultBolWei.bandWidth.slice(-1)
           const resultBolWeiAve = resultBolWei.bandWidth.slice(-number).reduce((total, element) => total + element) / number
