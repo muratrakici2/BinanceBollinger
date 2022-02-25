@@ -35,7 +35,7 @@ const App = () => {
     const findEmpty = myArray.findIndex((i) => i === "")
     myArray[findEmpty] = "USDT"
     console.log(myArray)
-    window.open(`https://www.binance.com/tr/trade/${myArray[0]}_${myArray[1]}`, "_blank");
+    window.open(`https://www.binance.com/en/trade/${myArray[0]}_${myArray[1]}`, "_blank");
   }
 
   return (
